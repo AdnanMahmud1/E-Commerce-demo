@@ -39,7 +39,7 @@ app.use(
 app.use(helmet());
 app.use(cors());
 app.use(xss());
-app.use(mongoSanitize);
+app.use(mongoSanitize());
 
 app.use(morgan("tiny"));
 app.use(express.json());
@@ -67,7 +67,7 @@ app.use("/api/v1/orders", orderRouter);
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
-const port = process.env.PORT || 3100;
+const port = process.env.PORT || 3102;
 
 const start = async () => {
   try {
